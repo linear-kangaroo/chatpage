@@ -1,0 +1,16 @@
+# 密钥与本地配置
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# 日志
+*.log
+
+# 本地 IDE / 工具配置
+.idea/
+.claude/
+.mcp.json

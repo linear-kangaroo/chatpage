@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DeepSeek 聊天</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>DeepSeek 聊天</h1>
+    <span id="status" class="status" data-state="pending">
+      <span class="dot"></span>
+      <span id="status-text">连接中…</span>
+    </span>
+    <div class="topbar-actions">
+      <button id="btn-clear" class="btn" type="button">清空对话</button>
+      <button id="btn-settings" class="btn" type="button">设置</button>
+    </div>
+  </header>
+
+  <main id="messages" class="messages" aria-live="polite"></main>
+
+  <footer class="composer">
+    <div class="composer-row">
+      <textarea id="input" rows="1" maxlength="4000"
+        placeholder="输入消息(Enter 发送,Shift+Enter 换行)"></textarea>
+      <button id="btn-send" class="btn btn-primary" type="button">发送</button>
+    </div>
+  </footer>
+
+  <dialog id="token-dialog">
+    <form id="token-form">
+      <h2>连接设置</h2>
+      <p>后端地址与令牌仅保存在当前浏览器,不会上传。</p>
+      <input type="url" id="backend-input" autocomplete="off" spellcheck="false"
+        placeholder="后端地址,如 https://xxx.trycloudflare.com(留空=与页面同源)">
+      <input type="password" id="token-input" autocomplete="off" spellcheck="false" placeholder="访问令牌(backend/.env 中的 APP_BEARER_TOKEN)">
+      <div class="dialog-actions">
+        <button id="btn-token-cancel" class="btn" type="button">取消</button>
+        <button class="btn btn-primary" type="submit">保存</button>
+      </div>
+      <p id="token-error" class="token-error" hidden></p>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

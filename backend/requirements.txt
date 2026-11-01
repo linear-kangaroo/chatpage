@@ -1,0 +1,5 @@
+# 锁定已验证版本(2026-11-01 用 uv + CPython 3.12.10 验证)
+fastapi==0.162.0
+uvicorn[standard]==0.54.0
+openai==3.42.0
+pydantic-settings==2.16.2
